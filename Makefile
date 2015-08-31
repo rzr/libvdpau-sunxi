@@ -34,9 +34,6 @@ clean:
 install: $(TARGET)
 	install -D $(TARGET) $(DESTDIR)$(MODULEDIR)/$(TARGET)
 	ln -sf $(TARGET) $(DESTDIR)$(MODULEDIR)/$(basename $(TARGET))
-	install -d $(DESTDIR)/usr/include
-	ls *.h | while read file ; do install $${file} $(DESTDIR)/usr/include/ ; done
-
 
 uninstall:
 	rm -f $(DESTDIR)$(MODULEDIR)/$(basename $(TARGET))
